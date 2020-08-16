@@ -1,0 +1,16 @@
+1. Run the maven build by going into the root directory and running "mvn clean install"
+
+2. This is a SpringBoot application. Run the Application by typing in "mvn spring-boot:run". This will run the Spring boot app at port 8080. 
+
+3. Since, I have attached the debugger in the configuration better run this application  as:
+   mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+   
+4. Import the project in eclipse. Attach the remote debugger from within eclipse by going to Run -> Debug Configurations -> Remote Java Application, and select new launch configuration.
+
+5. Make sure select host as localhost and port as 5005 (The debug port configured as above).  Then click "Debug" button.
+
+6. Now go to the browser and enter http://localhost:8080/api/v1/eamusicfestivals. The response required will be printed on the screen as well on the terminal server screen console.
+
+7. Integration Test has been added. They can also be run from within eclipse too by going to the Integration test class MusicFestivalDataRestAPIControllerIntegrationTest
+   and runnnig it as Run as Junit Test. Or it can be run as "mvn clean test". The output will be printed on the console.
+
